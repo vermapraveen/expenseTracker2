@@ -10,8 +10,14 @@ import SwiftUI
 struct ShoppingListView: View {
     @StateObject var viewModel = ShoppingListViewModel()
     @State private var isAddingItem = false
-    @State private var isEditingItem = false
     @State private var selectedItem: ShoppingListItem?
+
+    private var isEditingItem: Binding<Bool> {
+        Binding<Bool>(
+            get: { selectedItem != nil },
+            set: { if !$0 { selectedItem = nil } }
+        )
+    }
 
     var body: some View {
         NavigationView {
@@ -28,7 +34,6 @@ struct ShoppingListView: View {
                         .swipeActions(edge: .leading, allowsFullSwipe: true) {
                             Button {
                                 selectedItem = item
-                                isEditingItem = true
                             } label: {
                                 Label("Edit", systemImage: "pencil")
                             }
@@ -44,15 +49,12 @@ struct ShoppingListView: View {
             .sheet(isPresented: $isAddingItem) {
                 AddItemView(viewModel: viewModel, isPresented: $isAddingItem)
             }
-            .sheet(isPresented: $isEditingItem, onDismiss: {
-                selectedItem = nil
-            }) {
-                if selectedItem == nil {
-                    EmptyView()
-                } else {
-                    EditItemView(viewModel: viewModel, item: selectedItem!, isPresented: $isEditingItem)
+            .sheet(isPresented: isEditingItem) {
+                if let selectedItem = selectedItem {
+                    EditItemView(viewModel: viewModel, item: selectedItem, isPresented: isEditingItem)
                 }
             }
         }
     }
 }
+
