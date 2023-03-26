@@ -21,6 +21,11 @@
 		1A1F430229CFAD3000898116 /* ShoppingListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1F430129CFAD3000898116 /* ShoppingListItemView.swift */; };
 		1A1F430429CFADCA00898116 /* EditItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1F430329CFADCA00898116 /* EditItemView.swift */; };
 		1A1F430629CFADE300898116 /* AddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1F430529CFADE300898116 /* AddItemView.swift */; };
+		1A1F430829D0984F00898116 /* Visiter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1F430729D0984F00898116 /* Visiter.swift */; };
+		1A1F430A29D0986F00898116 /* VisiterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1F430929D0986F00898116 /* VisiterViewModel.swift */; };
+		1A1F430E29D098B300898116 /* VisiterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1F430D29D098B300898116 /* VisiterView.swift */; };
+		1A1F431029D098F400898116 /* AddVisiterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1F430F29D098F400898116 /* AddVisiterView.swift */; };
+		1A1F431229D0997900898116 /* EditVisiterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1F431129D0997900898116 /* EditVisiterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +44,11 @@
 		1A1F430129CFAD3000898116 /* ShoppingListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListItemView.swift; sourceTree = "<group>"; };
 		1A1F430329CFADCA00898116 /* EditItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditItemView.swift; sourceTree = "<group>"; };
 		1A1F430529CFADE300898116 /* AddItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemView.swift; sourceTree = "<group>"; };
+		1A1F430729D0984F00898116 /* Visiter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Visiter.swift; sourceTree = "<group>"; };
+		1A1F430929D0986F00898116 /* VisiterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisiterViewModel.swift; sourceTree = "<group>"; };
+		1A1F430D29D098B300898116 /* VisiterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisiterView.swift; sourceTree = "<group>"; };
+		1A1F430F29D098F400898116 /* AddVisiterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVisiterView.swift; sourceTree = "<group>"; };
+		1A1F431129D0997900898116 /* EditVisiterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditVisiterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +81,7 @@
 		1A1F42DF29CDB8DA00898116 /* bbp.expenseTracker */ = {
 			isa = PBXGroup;
 			children = (
+				1A1F430B29D0988C00898116 /* views */,
 				1A1F42FC29CFACBB00898116 /* viewModels */,
 				1A1F42FB29CFACB000898116 /* models */,
 				1A1F42E029CDB8DA00898116 /* bbp_expenseTrackerApp.swift */,
@@ -101,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				1A1F42FD29CFACE700898116 /* ShoppingListItem.swift */,
+				1A1F430729D0984F00898116 /* Visiter.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -109,8 +121,27 @@
 			isa = PBXGroup;
 			children = (
 				1A1F42FF29CFAD0200898116 /* ShoppingListViewModel.swift */,
+				1A1F430929D0986F00898116 /* VisiterViewModel.swift */,
 			);
 			path = viewModels;
+			sourceTree = "<group>";
+		};
+		1A1F430B29D0988C00898116 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				1A1F430C29D0989800898116 /* settings */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		1A1F430C29D0989800898116 /* settings */ = {
+			isa = PBXGroup;
+			children = (
+				1A1F430D29D098B300898116 /* VisiterView.swift */,
+				1A1F430F29D098F400898116 /* AddVisiterView.swift */,
+				1A1F431129D0997900898116 /* EditVisiterView.swift */,
+			);
+			path = settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,11 +221,16 @@
 				1A1F430029CFAD0200898116 /* ShoppingListViewModel.swift in Sources */,
 				1A1F430229CFAD3000898116 /* ShoppingListItemView.swift in Sources */,
 				1A1F430429CFADCA00898116 /* EditItemView.swift in Sources */,
+				1A1F431229D0997900898116 /* EditVisiterView.swift in Sources */,
+				1A1F430E29D098B300898116 /* VisiterView.swift in Sources */,
 				1A1F430629CFADE300898116 /* AddItemView.swift in Sources */,
+				1A1F431029D098F400898116 /* AddVisiterView.swift in Sources */,
 				1A1F42FE29CFACE700898116 /* ShoppingListItem.swift in Sources */,
+				1A1F430829D0984F00898116 /* Visiter.swift in Sources */,
 				1A1F42E329CDB8DA00898116 /* ContentView.swift in Sources */,
 				1A1F42ED29CDB8DC00898116 /* bbp_expenseTracker.xcdatamodeld in Sources */,
 				1A1F42E129CDB8DA00898116 /* bbp_expenseTrackerApp.swift in Sources */,
+				1A1F430A29D0986F00898116 /* VisiterViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
