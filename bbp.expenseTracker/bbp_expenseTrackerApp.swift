@@ -10,11 +10,16 @@ import SwiftUI
 @main
 struct bbp_expenseTrackerApp: App {
     let persistenceController = PersistenceController.shared
+    @State private var selection = 1
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            TabView(selection:$selection){
+                ShoppingListView().tabItem{Label("Shopping List", systemImage: "checklist")}.tag(1)
+                ContentView().tabItem{ Label("Expenses", systemImage: "dollarsign")}.tag(2)
+                VisitView().tabItem{Label("Visit", systemImage: "cart")}.tag(3)
+                SettingsView().tabItem{Label("Settings", systemImage: "gear")}.tag(4)
+            }
         }
     }
 }

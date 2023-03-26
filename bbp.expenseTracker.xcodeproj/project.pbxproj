@@ -13,6 +13,14 @@
 		1A1F42E829CDB8DC00898116 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A1F42E729CDB8DC00898116 /* Preview Assets.xcassets */; };
 		1A1F42EA29CDB8DC00898116 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1F42E929CDB8DC00898116 /* Persistence.swift */; };
 		1A1F42ED29CDB8DC00898116 /* bbp_expenseTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1A1F42EB29CDB8DC00898116 /* bbp_expenseTracker.xcdatamodeld */; };
+		1A1F42F629CF580D00898116 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1F42F529CF580D00898116 /* SettingsView.swift */; };
+		1A1F42F829CF5A5A00898116 /* VisitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1F42F729CF5A5A00898116 /* VisitView.swift */; };
+		1A1F42FA29CFA8D200898116 /* ShoppingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1F42F929CFA8D200898116 /* ShoppingListView.swift */; };
+		1A1F42FE29CFACE700898116 /* ShoppingListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1F42FD29CFACE700898116 /* ShoppingListItem.swift */; };
+		1A1F430029CFAD0200898116 /* ShoppingListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1F42FF29CFAD0200898116 /* ShoppingListViewModel.swift */; };
+		1A1F430229CFAD3000898116 /* ShoppingListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1F430129CFAD3000898116 /* ShoppingListItemView.swift */; };
+		1A1F430429CFADCA00898116 /* EditItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1F430329CFADCA00898116 /* EditItemView.swift */; };
+		1A1F430629CFADE300898116 /* AddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1F430529CFADE300898116 /* AddItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +31,14 @@
 		1A1F42E729CDB8DC00898116 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1A1F42E929CDB8DC00898116 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		1A1F42EC29CDB8DC00898116 /* bbp_expenseTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = bbp_expenseTracker.xcdatamodel; sourceTree = "<group>"; };
+		1A1F42F529CF580D00898116 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		1A1F42F729CF5A5A00898116 /* VisitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitView.swift; sourceTree = "<group>"; };
+		1A1F42F929CFA8D200898116 /* ShoppingListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListView.swift; sourceTree = "<group>"; };
+		1A1F42FD29CFACE700898116 /* ShoppingListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListItem.swift; sourceTree = "<group>"; };
+		1A1F42FF29CFAD0200898116 /* ShoppingListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListViewModel.swift; sourceTree = "<group>"; };
+		1A1F430129CFAD3000898116 /* ShoppingListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListItemView.swift; sourceTree = "<group>"; };
+		1A1F430329CFADCA00898116 /* EditItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditItemView.swift; sourceTree = "<group>"; };
+		1A1F430529CFADE300898116 /* AddItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,12 +71,20 @@
 		1A1F42DF29CDB8DA00898116 /* bbp.expenseTracker */ = {
 			isa = PBXGroup;
 			children = (
+				1A1F42FC29CFACBB00898116 /* viewModels */,
+				1A1F42FB29CFACB000898116 /* models */,
 				1A1F42E029CDB8DA00898116 /* bbp_expenseTrackerApp.swift */,
 				1A1F42E229CDB8DA00898116 /* ContentView.swift */,
 				1A1F42E429CDB8DC00898116 /* Assets.xcassets */,
 				1A1F42E929CDB8DC00898116 /* Persistence.swift */,
 				1A1F42EB29CDB8DC00898116 /* bbp_expenseTracker.xcdatamodeld */,
 				1A1F42E629CDB8DC00898116 /* Preview Content */,
+				1A1F42F529CF580D00898116 /* SettingsView.swift */,
+				1A1F42F729CF5A5A00898116 /* VisitView.swift */,
+				1A1F42F929CFA8D200898116 /* ShoppingListView.swift */,
+				1A1F430129CFAD3000898116 /* ShoppingListItemView.swift */,
+				1A1F430329CFADCA00898116 /* EditItemView.swift */,
+				1A1F430529CFADE300898116 /* AddItemView.swift */,
 			);
 			path = bbp.expenseTracker;
 			sourceTree = "<group>";
@@ -71,6 +95,22 @@
 				1A1F42E729CDB8DC00898116 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1A1F42FB29CFACB000898116 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				1A1F42FD29CFACE700898116 /* ShoppingListItem.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		1A1F42FC29CFACBB00898116 /* viewModels */ = {
+			isa = PBXGroup;
+			children = (
+				1A1F42FF29CFAD0200898116 /* ShoppingListViewModel.swift */,
+			);
+			path = viewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,7 +183,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A1F42F829CF5A5A00898116 /* VisitView.swift in Sources */,
+				1A1F42FA29CFA8D200898116 /* ShoppingListView.swift in Sources */,
+				1A1F42F629CF580D00898116 /* SettingsView.swift in Sources */,
 				1A1F42EA29CDB8DC00898116 /* Persistence.swift in Sources */,
+				1A1F430029CFAD0200898116 /* ShoppingListViewModel.swift in Sources */,
+				1A1F430229CFAD3000898116 /* ShoppingListItemView.swift in Sources */,
+				1A1F430429CFADCA00898116 /* EditItemView.swift in Sources */,
+				1A1F430629CFADE300898116 /* AddItemView.swift in Sources */,
+				1A1F42FE29CFACE700898116 /* ShoppingListItem.swift in Sources */,
 				1A1F42E329CDB8DA00898116 /* ContentView.swift in Sources */,
 				1A1F42ED29CDB8DC00898116 /* bbp_expenseTracker.xcdatamodeld in Sources */,
 				1A1F42E129CDB8DA00898116 /* bbp_expenseTrackerApp.swift in Sources */,
