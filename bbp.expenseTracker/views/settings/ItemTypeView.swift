@@ -1,5 +1,5 @@
 //
-//  VisiterView.swift
+//  ItemTypeView.swift
 //  bbp.expenseTracker
 //
 //  Created by Praveen K Verma on 3/26/23.
@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-struct VisiterView: View {
-    @StateObject var viewModel = VisiterViewModel()
+struct ItemTypeView: View {
+    @StateObject var viewModel = ItemTypeViewModel()
     @State private var isAddingItem = false
-    @State private var selectedItem: Visiter?
+    @State private var selectedItem: ItemType?
 
     private var isEditingItem: Binding<Bool> {
         Binding<Bool>(
@@ -22,36 +22,36 @@ struct VisiterView: View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(viewModel.visiters) { visiter in
-                    Text(visiter.name)
+                ForEach(viewModel.ItemTypes) { ItemType in
+                    Text(ItemType.name)
                         .swipeActions(edge: .trailing, allowsFullSwipe: true) {
                             Button(role: .destructive) {
-                                viewModel.removeVisiter(visiter: visiter)
+                                viewModel.removeItemType(ItemType: ItemType)
                             } label: {
                                 Label("Remove", systemImage: "trash")
                             }
                         }
                         .swipeActions(edge: .leading, allowsFullSwipe: true) {
                             Button {
-                                selectedItem = visiter
+                                selectedItem = ItemType
                             } label: {
                                 Label("Edit", systemImage: "pencil")
                             }
                         }
                 }
             }
-            .navigationBarTitle("Visiters")
+            .navigationBarTitle("ItemTypes")
             .navigationBarItems(trailing: Button(action: {
                 isAddingItem.toggle()
             }) {
                 Image(systemName: "plus")
             })
             .sheet(isPresented: $isAddingItem) {
-                AddVisiterView(viewModel: viewModel, isPresented: $isAddingItem)
+                AddItemTypeView(viewModel: viewModel, isPresented: $isAddingItem)
             }
             .sheet(isPresented: isEditingItem) {
                 if let selectedItem = selectedItem {
-                    EditVisiterView(viewModel: viewModel, visiter: selectedItem, isPresented: isEditingItem)
+                    EditItemTypeView(viewModel: viewModel, ItemType: selectedItem, isPresented: isEditingItem)
                 }
             }
         }

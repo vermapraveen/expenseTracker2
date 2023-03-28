@@ -11,13 +11,16 @@ import SwiftUI
 struct bbp_expenseTrackerApp: App {
     let persistenceController = PersistenceController.shared
     @State private var selection = 1
+    @StateObject var storeViewModel = StoreViewModel()
+    @StateObject var visiterViewModel = VisiterViewModel()
 
     var body: some Scene {
         WindowGroup {
             TabView(selection:$selection){
                 ShoppingListView().tabItem{Label("Shopping List", systemImage: "checklist")}.tag(1)
                 ContentView().tabItem{ Label("Expenses", systemImage: "dollarsign")}.tag(2)
-                VisitView().tabItem{Label("Visit", systemImage: "cart")}.tag(3)
+                StoreVisitView(storeViewModel: storeViewModel, visiterViewModel: visiterViewModel).tabItem{Label("Visit", systemImage: "cart")}.tag(3)
+                
                 SettingsView().tabItem{Label("Settings", systemImage: "gear")}.tag(4)
             }
         }

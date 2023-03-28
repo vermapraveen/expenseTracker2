@@ -1,5 +1,5 @@
 //
-//  VisiterView.swift
+//  PaymentTypeView.swift
 //  bbp.expenseTracker
 //
 //  Created by Praveen K Verma on 3/26/23.
@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-struct VisiterView: View {
-    @StateObject var viewModel = VisiterViewModel()
+struct PaymentTypeView: View {
+    @StateObject var viewModel = PaymentTypeViewModel()
     @State private var isAddingItem = false
-    @State private var selectedItem: Visiter?
+    @State private var selectedItem: PaymentType?
 
     private var isEditingItem: Binding<Bool> {
         Binding<Bool>(
@@ -22,36 +22,36 @@ struct VisiterView: View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(viewModel.visiters) { visiter in
-                    Text(visiter.name)
+                ForEach(viewModel.PaymentTypes) { PaymentType in
+                    Text(PaymentType.name)
                         .swipeActions(edge: .trailing, allowsFullSwipe: true) {
                             Button(role: .destructive) {
-                                viewModel.removeVisiter(visiter: visiter)
+                                viewModel.removePaymentType(PaymentType: PaymentType)
                             } label: {
                                 Label("Remove", systemImage: "trash")
                             }
                         }
                         .swipeActions(edge: .leading, allowsFullSwipe: true) {
                             Button {
-                                selectedItem = visiter
+                                selectedItem = PaymentType
                             } label: {
                                 Label("Edit", systemImage: "pencil")
                             }
                         }
                 }
             }
-            .navigationBarTitle("Visiters")
+            .navigationBarTitle("PaymentTypes")
             .navigationBarItems(trailing: Button(action: {
                 isAddingItem.toggle()
             }) {
                 Image(systemName: "plus")
             })
             .sheet(isPresented: $isAddingItem) {
-                AddVisiterView(viewModel: viewModel, isPresented: $isAddingItem)
+                AddPaymentTypeView(viewModel: viewModel, isPresented: $isAddingItem)
             }
             .sheet(isPresented: isEditingItem) {
                 if let selectedItem = selectedItem {
-                    EditVisiterView(viewModel: viewModel, visiter: selectedItem, isPresented: isEditingItem)
+                    EditPaymentTypeView(viewModel: viewModel, PaymentType: selectedItem, isPresented: isEditingItem)
                 }
             }
         }

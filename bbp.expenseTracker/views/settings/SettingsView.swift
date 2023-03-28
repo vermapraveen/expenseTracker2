@@ -11,7 +11,7 @@ struct SettingsView: View {
     var body: some View {
         NavigationView {
             List {
-                NavigationLink(destination: Text("Payment Type")) {
+                NavigationLink(destination: PaymentTypeView()) {
                     Text("Payment Type")
                 }
                 // Replace the existing Visiter row in the SettingsView List with the following:
@@ -19,17 +19,14 @@ struct SettingsView: View {
                     Text("Visiter")
                 }
 
-                NavigationLink(destination: Text("Store")) {
+                NavigationLink(destination: StoreView()) {
                     Text("Store")
                 }
-                NavigationLink(destination: Text("Unit Type")) {
+                NavigationLink(destination: UnitTypeView()) {
                     Text("Unit Type")
                 }
-                NavigationLink(destination: Text("Item Type")) {
+                NavigationLink(destination: ItemTypeView()) {
                     Text("Item Type")
-                }
-                NavigationLink(destination: Text("Category")) {
-                    Text("Category")
                 }
             }
             .navigationBarTitle("Settings")

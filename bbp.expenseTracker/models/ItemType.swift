@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Visiter: Identifiable, Equatable, Hashable {
+struct ItemType: Identifiable, Equatable {
     var id = UUID()
     var name: String
 }
