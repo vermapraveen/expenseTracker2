@@ -50,6 +50,9 @@
 		1A1F434B29D28C9900898116 /* ExpenseItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1F434A29D28C9900898116 /* ExpenseItemViewModel.swift */; };
 		1A1F434D29D28CB300898116 /* StoreVisitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1F434C29D28CB300898116 /* StoreVisitView.swift */; };
 		1A1F435029D2909600898116 /* MultiSelectPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1F434F29D2909600898116 /* MultiSelectPicker.swift */; };
+		1A1F435329D454ED00898116 /* AddExpenseItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1F435229D454ED00898116 /* AddExpenseItemView.swift */; };
+		1A1F435529D4737800898116 /* ExpenseItemsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1F435429D4737800898116 /* ExpenseItemsListView.swift */; };
+		1A1F435729D473B500898116 /* EditExpenseItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1F435629D473B500898116 /* EditExpenseItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -97,6 +100,9 @@
 		1A1F434A29D28C9900898116 /* ExpenseItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseItemViewModel.swift; sourceTree = "<group>"; };
 		1A1F434C29D28CB300898116 /* StoreVisitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreVisitView.swift; sourceTree = "<group>"; };
 		1A1F434F29D2909600898116 /* MultiSelectPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiSelectPicker.swift; sourceTree = "<group>"; };
+		1A1F435229D454ED00898116 /* AddExpenseItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseItemView.swift; sourceTree = "<group>"; };
+		1A1F435429D4737800898116 /* ExpenseItemsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseItemsListView.swift; sourceTree = "<group>"; };
+		1A1F435629D473B500898116 /* EditExpenseItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditExpenseItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +187,7 @@
 		1A1F430B29D0988C00898116 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				1A1F435129D454D700898116 /* expenseItem */,
 				1A1F434E29D2908000898116 /* custom */,
 				1A1F434529D2899900898116 /* shoppingList */,
 				1A1F434429D2892400898116 /* visit */,
@@ -238,6 +245,16 @@
 				1A1F434F29D2909600898116 /* MultiSelectPicker.swift */,
 			);
 			path = custom;
+			sourceTree = "<group>";
+		};
+		1A1F435129D454D700898116 /* expenseItem */ = {
+			isa = PBXGroup;
+			children = (
+				1A1F435229D454ED00898116 /* AddExpenseItemView.swift */,
+				1A1F435429D4737800898116 /* ExpenseItemsListView.swift */,
+				1A1F435629D473B500898116 /* EditExpenseItemView.swift */,
+			);
+			path = expenseItem;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,6 +327,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A1F435529D4737800898116 /* ExpenseItemsListView.swift in Sources */,
 				1A1F432329D100E200898116 /* Store.swift in Sources */,
 				1A1F432929D1010200898116 /* StoreViewModel.swift in Sources */,
 				1A1F42F829CF5A5A00898116 /* VisitView.swift in Sources */,
@@ -321,11 +339,13 @@
 				1A1F42EA29CDB8DC00898116 /* Persistence.swift in Sources */,
 				1A1F435029D2909600898116 /* MultiSelectPicker.swift in Sources */,
 				1A1F432029D100E200898116 /* PaymentType.swift in Sources */,
+				1A1F435729D473B500898116 /* EditExpenseItemView.swift in Sources */,
 				1A1F434329D1038500898116 /* StoreView.swift in Sources */,
 				1A1F432A29D1010200898116 /* PaymentTypeViewModel.swift in Sources */,
 				1A1F433629D1037D00898116 /* AddPaymentTypeView.swift in Sources */,
 				1A1F430029CFAD0200898116 /* ShoppingListViewModel.swift in Sources */,
 				1A1F433529D1037D00898116 /* EditPaymentTypeView.swift in Sources */,
+				1A1F435329D454ED00898116 /* AddExpenseItemView.swift in Sources */,
 				1A1F434929D28C7F00898116 /* ExpenseItem.swift in Sources */,
 				1A1F430229CFAD3000898116 /* ShoppingListItemView.swift in Sources */,
 				1A1F430429CFADCA00898116 /* EditItemView.swift in Sources */,

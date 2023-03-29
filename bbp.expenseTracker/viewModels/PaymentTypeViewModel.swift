@@ -9,29 +9,30 @@ import Combine
 import SwiftUI
 
 class PaymentTypeViewModel: ObservableObject {
-    @Published var PaymentTypes: [PaymentType] = [
-        PaymentType(name: "Cash"),
-        PaymentType(name: "Cashback"),
-        PaymentType(name: "Coupon"),
-        PaymentType(name: "Monthly Debit"),
-        PaymentType(name: "Praveen Apple"),
-        PaymentType(name: "Divya Apple"),
-        PaymentType(name: "Praveen Discover"),
-        PaymentType(name: "Praveen Citi")
-    ]
+    @Published var paymentTypes: [PaymentType] = []
+
+        init() {
+            let dummyData = [
+                PaymentType(id: UUID(), name: "Cash"),
+                PaymentType(id: UUID(), name: "Credit Card"),
+                PaymentType(id: UUID(), name: "Debit Card"),
+                PaymentType(id: UUID(), name: "Mobile Payment")
+            ]
+            self.paymentTypes = dummyData
+        }
 
     func addPaymentType(name: String) {
         let newPaymentType = PaymentType(name: name)
-        PaymentTypes.append(newPaymentType)
+        paymentTypes.append(newPaymentType)
     }
 
     func updatePaymentType(PaymentType: PaymentType, newName: String) {
-        if let index = PaymentTypes.firstIndex(of: PaymentType) {
-            PaymentTypes[index].name = newName
+        if let index = paymentTypes.firstIndex(of: PaymentType) {
+            paymentTypes[index].name = newName
         }
     }
 
     func removePaymentType(PaymentType: PaymentType) {
-        PaymentTypes.removeAll { $0 == PaymentType }
+        paymentTypes.removeAll { $0 == PaymentType }
     }
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct PaymentType: Identifiable, Equatable {
+struct PaymentType: Identifiable, Equatable, Hashable {
     var id = UUID()
     var name: String
 }

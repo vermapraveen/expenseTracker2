@@ -9,7 +9,7 @@ import Combine
 import SwiftUI
 
 class UnitTypeViewModel: ObservableObject {
-    @Published var UnitTypes: [UnitType] = [
+    @Published var unitTypes: [UnitType] = [
         UnitType(name: "Mile"),
         UnitType(name: "Kilogram"),
         UnitType(name: "Pound"),
@@ -23,16 +23,16 @@ class UnitTypeViewModel: ObservableObject {
 
     func addUnitType(name: String) {
         let newUnitType = UnitType(name: name)
-        UnitTypes.append(newUnitType)
+        unitTypes.append(newUnitType)
     }
 
     func updateUnitType(UnitType: UnitType, newName: String) {
-        if let index = UnitTypes.firstIndex(of: UnitType) {
-            UnitTypes[index].name = newName
+        if let index = unitTypes.firstIndex(of: UnitType) {
+            unitTypes[index].name = newName
         }
     }
 
     func removeUnitType(UnitType: UnitType) {
-        UnitTypes.removeAll { $0 == UnitType }
+        unitTypes.removeAll { $0 == UnitType }
     }
 }

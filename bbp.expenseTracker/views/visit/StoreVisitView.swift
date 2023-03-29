@@ -14,7 +14,15 @@ struct StoreVisitView: View {
     @State private var selectedStore: Store?
     @State private var selectedVisiters: Set<Visiter> = []
     @State private var showAddStoreView = false
+    @State private var showAddExpenseItemView = false
 
+    @StateObject var paymentTypeViewModel = PaymentTypeViewModel()
+    @State private var selectedPaymentType1: PaymentType?
+    @State private var selectedPaymentType2: PaymentType?
+    @State private var amount1: String = ""
+    @State private var amount2: String = ""
+    @State private var showAddPaymentTypeView = false
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -38,30 +46,78 @@ struct StoreVisitView: View {
                         }
                     }
                 }
-
-                // Visiter drop-down
-                MultiSelectPicker(label: "Select Visiters",
-                                  options: visiterViewModel.visiters,
-                                  selection: $selectedVisiters,
-                                  labelForSelection: { visiter in visiter.name })
-
-
-                // Check-in and Check-out buttons
-                HStack {
-                    Button("Check In", action: {
-                        // Handle check-in action
-                    }).padding().background(Color.blue).foregroundColor(.white).cornerRadius(8)
-
-                    Button("Check Out", action: {
-                        // Handle check-out action
-                    }).padding().background(Color.red).foregroundColor(.white).cornerRadius(8)
+                Section(header: Text("")) {
+                    // Visiter drop-down
+                    MultiSelectPicker(label: "Select Visiters",
+                                      options: visiterViewModel.visiters,
+                                      selection: $selectedVisiters,
+                                      labelForSelection: { visiter in visiter.name })
                 }
-
-                // ExpenseItem list
-                List {
-                    ForEach(expenseItemViewModel.expenseItems) { expenseItem in
-                        // Display ExpenseItem, handle edit and remove
+                Section(header: Text("")) {
+                    // Check-in and Check-out buttons
+                    HStack {
+                        Button("Check In", action: {
+                            // Handle check-in action
+                        }).padding().background(Color.blue).foregroundColor(.white).cornerRadius(8)
+                        
+                        Button("Check Out", action: {
+                            // Handle check-out action
+                        }).padding().background(Color.red).foregroundColor(.white).cornerRadius(8)
                     }
+                }
+                
+                // ExpenseItem list
+                Section(header: Text("Expense Items")) {
+                    ExpenseItemsListView(expenseItemViewModel: expenseItemViewModel)
+
+                    Button(action: {
+                        showAddExpenseItemView.toggle()
+                    }) {
+                        HStack {
+                            Image(systemName: "plus.circle.fill")
+                                .foregroundColor(.blue)
+                                .imageScale(.large)
+                            Text("Add Expense Item")
+                                .foregroundColor(.blue)
+                        }
+                    }.sheet(isPresented: $showAddExpenseItemView) {
+                        AddExpenseItemView(expenseItemViewModel: expenseItemViewModel, visitId: UUID()) // Pass the actual visitId when available
+                    }
+                }
+                Section(header: Text("Payment Details")) {
+                    Picker("Payment Type 1", selection: $selectedPaymentType1) {
+                        ForEach(paymentTypeViewModel.paymentTypes) { paymentType in
+                            Text(paymentType.name).tag(paymentType as PaymentType?)
+                        }
+                    }
+                    TextField("Amount", text: $amount1)
+                        .keyboardType(.decimalPad)
+
+                    HStack {
+                        VStack {
+                            Text("Payment Type 2")
+                                .foregroundColor(.gray)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                            
+                            Picker("", selection: $selectedPaymentType2) {
+                                ForEach(paymentTypeViewModel.paymentTypes) { paymentType in
+                                    Text(paymentType.name).tag(paymentType as PaymentType?)
+                                }
+                            }.pickerStyle(MenuPickerStyle())
+                        }
+
+                        Button(action: {
+                            showAddPaymentTypeView.toggle()
+                        }) {
+                            Image(systemName: "plus.circle.fill")
+                                .foregroundColor(.blue)
+                                .imageScale(.large)
+                        }.sheet(isPresented: $showAddPaymentTypeView) {
+                            AddPaymentTypeView(viewModel: paymentTypeViewModel, isPresented: $showAddPaymentTypeView)
+                        }
+                    }
+                    TextField("Amount", text: $amount2)
+                        .keyboardType(.decimalPad)
                 }
             }.padding()
             .navigationBarTitle("Store Visit")

@@ -22,7 +22,7 @@ struct PaymentTypeView: View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(viewModel.PaymentTypes) { PaymentType in
+                ForEach(viewModel.paymentTypes) { PaymentType in
                     Text(PaymentType.name)
                         .swipeActions(edge: .trailing, allowsFullSwipe: true) {
                             Button(role: .destructive) {

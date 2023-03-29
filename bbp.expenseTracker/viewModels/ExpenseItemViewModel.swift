@@ -10,9 +10,19 @@ import SwiftUI
 
 class ExpenseItemViewModel: ObservableObject {
     @Published var expenseItems: [ExpenseItem] = []
+    let visitId = UUID()
 
-    func addExpenseItem(name: String, pricePerUnit: Double, unitType: String, unitsPurchased: Int) {
-        let newItem = ExpenseItem(name: name, pricePerUnit: pricePerUnit, unitType: unitType, unitsPurchased: unitsPurchased)
+    init() {
+        let dummyData = [
+            ExpenseItem(id: UUID(), visitId: visitId, name: "Milk", pricePerUnit: 1.25, unitType: "L", unitsPurchased: 2),
+            ExpenseItem(id: UUID(), visitId: visitId, name: "Bread", pricePerUnit: 0.75, unitType: "Loaf", unitsPurchased: 1),
+            ExpenseItem(id: UUID(), visitId: visitId, name: "Eggs", pricePerUnit: 2.50, unitType: "Dozen", unitsPurchased: 1)
+                    ]
+        self.expenseItems = dummyData
+    }
+    
+    func addExpenseItem(name: String, visitId: UUID, pricePerUnit: Double, unitType: String, unitsPurchased: Int) {
+        let newItem = ExpenseItem(visitId: visitId, name: name, pricePerUnit: pricePerUnit, unitType: unitType, unitsPurchased: unitsPurchased)
         expenseItems.append(newItem)
     }
 

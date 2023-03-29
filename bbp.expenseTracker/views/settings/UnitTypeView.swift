@@ -22,7 +22,7 @@ struct UnitTypeView: View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(viewModel.UnitTypes) { UnitType in
+                ForEach(viewModel.unitTypes) { UnitType in
                     Text(UnitType.name)
                         .swipeActions(edge: .trailing, allowsFullSwipe: true) {
                             Button(role: .destructive) {

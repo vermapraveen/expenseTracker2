@@ -9,6 +9,7 @@ import Foundation
 
 struct ExpenseItem: Identifiable, Equatable {
     var id = UUID()
+    var visitId: UUID
     var name: String
     var pricePerUnit: Double
     var unitType: String
