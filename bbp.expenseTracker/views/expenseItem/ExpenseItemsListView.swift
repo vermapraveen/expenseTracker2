@@ -15,7 +15,14 @@ struct ExpenseItemsListView: View {
     var body: some View {
         List {
             ForEach(expenseItemViewModel.expenseItems) { item in
-                Text(item.name)
+                HStack {
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text(item.name).font(.headline)
+                        Text("\(item.unitsPurchased) \(item.unitType) | Rate: \(item.pricePerUnit, specifier: "%.2f") per \(item.unitType) | Total: \((Double(item.unitsPurchased) * item.pricePerUnit),  specifier: "%.2f")")
+                        .font(.footnote)
+                    }
+                    Spacer()
+                }
                     .contentShape(Rectangle())
                     .onTapGesture { }
                     .swipeActions(edge: .trailing) {

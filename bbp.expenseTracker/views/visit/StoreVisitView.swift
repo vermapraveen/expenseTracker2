@@ -23,9 +23,13 @@ struct StoreVisitView: View {
     @State private var amount2: String = ""
     @State private var showAddPaymentTypeView = false
     
+    @State private var visitId: UUID?
+    @State private var checkInDisabled = false
+    @State private var showingPastVisits = false
+
     var body: some View {
         NavigationView {
-            VStack {
+            Form {
                 // Store drop-down
                 Section(header: Text("Store")) {
                     HStack {
@@ -56,32 +60,21 @@ struct StoreVisitView: View {
                 Section(header: Text("")) {
                     // Check-in and Check-out buttons
                     HStack {
-                        Button("Check In", action: {
-                            // Handle check-in action
-                        }).padding().background(Color.blue).foregroundColor(.white).cornerRadius(8)
+                        Button(action: {
+                            visitId = UUID()
+                            checkInDisabled = true
+                        }) {
+                            Text("Check In")
+                        }
+                        .disabled(checkInDisabled)
+                        .padding()
+                        .background(Color.blue)
+                        .foregroundColor(.white)
+                        .cornerRadius(8)
                         
                         Button("Check Out", action: {
                             // Handle check-out action
                         }).padding().background(Color.red).foregroundColor(.white).cornerRadius(8)
-                    }
-                }
-                
-                // ExpenseItem list
-                Section(header: Text("Expense Items")) {
-                    ExpenseItemsListView(expenseItemViewModel: expenseItemViewModel)
-
-                    Button(action: {
-                        showAddExpenseItemView.toggle()
-                    }) {
-                        HStack {
-                            Image(systemName: "plus.circle.fill")
-                                .foregroundColor(.blue)
-                                .imageScale(.large)
-                            Text("Add Expense Item")
-                                .foregroundColor(.blue)
-                        }
-                    }.sheet(isPresented: $showAddExpenseItemView) {
-                        AddExpenseItemView(expenseItemViewModel: expenseItemViewModel, visitId: UUID()) // Pass the actual visitId when available
                     }
                 }
                 Section(header: Text("Payment Details")) {
@@ -118,6 +111,10 @@ struct StoreVisitView: View {
                     }
                     TextField("Amount", text: $amount2)
                         .keyboardType(.decimalPad)
+                    
+                }
+                Section(header: Text("Past Visits")) {
+                    StoreVisitListView()
                 }
             }.padding()
             .navigationBarTitle("Store Visit")

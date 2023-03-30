@@ -18,7 +18,7 @@ struct bbp_expenseTrackerApp: App {
         WindowGroup {
             TabView(selection:$selection){
                 ShoppingListView().tabItem{Label("Shopping List", systemImage: "checklist")}.tag(1)
-                ContentView().tabItem{ Label("Expenses", systemImage: "dollarsign")}.tag(2)
+                ExpensesView().tabItem{ Label("Expenses", systemImage: "dollarsign")}.tag(2)
                 StoreVisitView(storeViewModel: storeViewModel, visiterViewModel: visiterViewModel).tabItem{Label("Visit", systemImage: "cart")}.tag(3)
                 
                 SettingsView().tabItem{Label("Settings", systemImage: "gear")}.tag(4)

@@ -34,16 +34,6 @@ struct AddExpenseItemView: View {
                                 Text(unitType.name).tag(unitType as UnitType?)
                             }
                         }
-                        
-                        Button(action: {
-                            showAddUnitTypeView.toggle()
-                        }) {
-                            Image(systemName: "plus.circle.fill")
-                                .foregroundColor(.blue)
-                                .imageScale(.large)
-                        }.sheet(isPresented: $showAddUnitTypeView) {
-                            // Implement AddUnitTypeView and pass the required view model
-                        }
                     }
                     
                     TextField("Units Purchased", text: $unitPurchased)
