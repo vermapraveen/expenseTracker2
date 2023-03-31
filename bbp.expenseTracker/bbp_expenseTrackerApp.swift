@@ -24,7 +24,8 @@ struct bbp_expenseTrackerApp: App {
                     ExpensesView(visitId: lastVisitId).tabItem{ Label("Expenses", systemImage: "dollarsign")}.tag(2)
                     StoreVisitView(storeViewModel: storeViewModel, visiterViewModel: visiterViewModel, selectedTab: $selectedTab).tabItem{Label("Store Visit", systemImage: "cart")}.tag(3)
                     
-                    SettingsView().tabItem{Label("Settings", systemImage: "gear")}.tag(4)
+                    Expense2View().tabItem{Label("Expense2", systemImage: "cart")}.tag(4)
+                    SettingsView().tabItem{Label("Settings", systemImage: "gear")}.tag(5)
                 }
         }
     }

@@ -53,6 +53,12 @@
 		1A1F435329D454ED00898116 /* AddExpenseItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1F435229D454ED00898116 /* AddExpenseItemView.swift */; };
 		1A1F435529D4737800898116 /* ExpenseItemsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1F435429D4737800898116 /* ExpenseItemsListView.swift */; };
 		1A1F435729D473B500898116 /* EditExpenseItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1F435629D473B500898116 /* EditExpenseItemView.swift */; };
+		1A3E5DDB29D6E82600169EA6 /* expenseModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3E5DDA29D6E82600169EA6 /* expenseModels.swift */; };
+		1A3E5DDD29D6E86400169EA6 /* ExpenseRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3E5DDC29D6E86400169EA6 /* ExpenseRowView.swift */; };
+		1A3E5DDF29D6E8A000169EA6 /* VisitDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3E5DDE29D6E8A000169EA6 /* VisitDetailView.swift */; };
+		1A3E5DE129D6EA3C00169EA6 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3E5DE029D6EA3C00169EA6 /* SearchBar.swift */; };
+		1A3E5DE329D6EA5100169EA6 /* FilterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3E5DE229D6EA5100169EA6 /* FilterButton.swift */; };
+		1A3E5DE529D6EAB100169EA6 /* Expense2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3E5DE429D6EAB100169EA6 /* Expense2View.swift */; };
 		1AF4BD6029D506EF00B6EA23 /* ExpensesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF4BD5F29D506EF00B6EA23 /* ExpensesView.swift */; };
 		1AF4BD6229D5B8B400B6EA23 /* StoreVisit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF4BD6129D5B8B400B6EA23 /* StoreVisit.swift */; };
 		1AF4BD6429D5B8D200B6EA23 /* StoreVisitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF4BD6329D5B8D200B6EA23 /* StoreVisitViewModel.swift */; };
@@ -108,6 +114,12 @@
 		1A1F435229D454ED00898116 /* AddExpenseItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseItemView.swift; sourceTree = "<group>"; };
 		1A1F435429D4737800898116 /* ExpenseItemsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseItemsListView.swift; sourceTree = "<group>"; };
 		1A1F435629D473B500898116 /* EditExpenseItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditExpenseItemView.swift; sourceTree = "<group>"; };
+		1A3E5DDA29D6E82600169EA6 /* expenseModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = expenseModels.swift; sourceTree = "<group>"; };
+		1A3E5DDC29D6E86400169EA6 /* ExpenseRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseRowView.swift; sourceTree = "<group>"; };
+		1A3E5DDE29D6E8A000169EA6 /* VisitDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitDetailView.swift; sourceTree = "<group>"; };
+		1A3E5DE029D6EA3C00169EA6 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		1A3E5DE229D6EA5100169EA6 /* FilterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterButton.swift; sourceTree = "<group>"; };
+		1A3E5DE429D6EAB100169EA6 /* Expense2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense2View.swift; sourceTree = "<group>"; };
 		1AF4BD5F29D506EF00B6EA23 /* ExpensesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesView.swift; sourceTree = "<group>"; };
 		1AF4BD6129D5B8B400B6EA23 /* StoreVisit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreVisit.swift; sourceTree = "<group>"; };
 		1AF4BD6329D5B8D200B6EA23 /* StoreVisitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreVisitViewModel.swift; sourceTree = "<group>"; };
@@ -145,6 +157,7 @@
 		1A1F42DF29CDB8DA00898116 /* bbp.expenseTracker */ = {
 			isa = PBXGroup;
 			children = (
+				1A3E5DD929D6E80600169EA6 /* expense */,
 				1AF4BD6729D6897400B6EA23 /* services */,
 				1A1F430B29D0988C00898116 /* views */,
 				1A1F42FC29CFACBB00898116 /* viewModels */,
@@ -272,6 +285,19 @@
 			path = expenseItem;
 			sourceTree = "<group>";
 		};
+		1A3E5DD929D6E80600169EA6 /* expense */ = {
+			isa = PBXGroup;
+			children = (
+				1A3E5DDA29D6E82600169EA6 /* expenseModels.swift */,
+				1A3E5DDC29D6E86400169EA6 /* ExpenseRowView.swift */,
+				1A3E5DDE29D6E8A000169EA6 /* VisitDetailView.swift */,
+				1A3E5DE029D6EA3C00169EA6 /* SearchBar.swift */,
+				1A3E5DE229D6EA5100169EA6 /* FilterButton.swift */,
+				1A3E5DE429D6EAB100169EA6 /* Expense2View.swift */,
+			);
+			path = expense;
+			sourceTree = "<group>";
+		};
 		1AF4BD6729D6897400B6EA23 /* services */ = {
 			isa = PBXGroup;
 			children = (
@@ -351,9 +377,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A1F435529D4737800898116 /* ExpenseItemsListView.swift in Sources */,
+				1A3E5DE329D6EA5100169EA6 /* FilterButton.swift in Sources */,
 				1A1F432329D100E200898116 /* Store.swift in Sources */,
 				1A1F432929D1010200898116 /* StoreViewModel.swift in Sources */,
 				1A1F42F829CF5A5A00898116 /* VisitView.swift in Sources */,
+				1A3E5DDD29D6E86400169EA6 /* ExpenseRowView.swift in Sources */,
 				1A1F432129D100E200898116 /* UnitType.swift in Sources */,
 				1A1F432229D100E200898116 /* ItemType.swift in Sources */,
 				1A1F432F29D1037800898116 /* AddItemTypeView.swift in Sources */,
@@ -361,7 +389,9 @@
 				1A1F42FA29CFA8D200898116 /* ShoppingListView.swift in Sources */,
 				1A1F42F629CF580D00898116 /* SettingsView.swift in Sources */,
 				1A1F42EA29CDB8DC00898116 /* Persistence.swift in Sources */,
+				1A3E5DE529D6EAB100169EA6 /* Expense2View.swift in Sources */,
 				1A1F435029D2909600898116 /* MultiSelectPicker.swift in Sources */,
+				1A3E5DDF29D6E8A000169EA6 /* VisitDetailView.swift in Sources */,
 				1A1F432029D100E200898116 /* PaymentType.swift in Sources */,
 				1A1F435729D473B500898116 /* EditExpenseItemView.swift in Sources */,
 				1AF4BD6429D5B8D200B6EA23 /* StoreVisitViewModel.swift in Sources */,
@@ -386,7 +416,9 @@
 				1A1F432B29D1010200898116 /* UnitTypeViewModel.swift in Sources */,
 				1A1F433C29D1038100898116 /* UnitTypeView.swift in Sources */,
 				1A1F430829D0984F00898116 /* Visiter.swift in Sources */,
+				1A3E5DDB29D6E82600169EA6 /* expenseModels.swift in Sources */,
 				1A1F434D29D28CB300898116 /* StoreVisitView.swift in Sources */,
+				1A3E5DE129D6EA3C00169EA6 /* SearchBar.swift in Sources */,
 				1A1F433029D1037800898116 /* ItemTypeView.swift in Sources */,
 				1A1F42E329CDB8DA00898116 /* ContentView.swift in Sources */,
 				1AF4BD6629D5B8F400B6EA23 /* StoreVisitListView.swift in Sources */,

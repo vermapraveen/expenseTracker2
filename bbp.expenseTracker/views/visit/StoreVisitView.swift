@@ -32,7 +32,7 @@ struct StoreVisitView: View {
 
     var body: some View {
         NavigationView {
-            VStack {
+            Form {
                 // Store drop-down
                 Section(header: Text("Store")) {
                     HStack {
