@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct StoreVisit: Identifiable {
+struct StoreVisit: Identifiable, Decodable {
     let id: UUID
     let storeName: String
     let visitors: [Visiter]

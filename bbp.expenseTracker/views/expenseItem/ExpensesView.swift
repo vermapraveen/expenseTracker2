@@ -9,6 +9,7 @@ import SwiftUI
 struct ExpensesView: View {
     @ObservedObject var expenseItemViewModel = ExpenseItemViewModel()
     @State private var showAddExpenseItemView = false
+    let visitId: UUID?
 
     var body: some View {
         NavigationView {

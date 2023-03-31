@@ -9,6 +9,8 @@ import SwiftUI
 
 struct StoreVisitListView: View {
     @ObservedObject var storeVisitViewModel = StoreVisitViewModel()
+    @Binding var selectedVisitId: UUID?
+    var onVisitItemSelected: (UUID) -> Void
 
     var body: some View {
         List {
@@ -33,6 +35,9 @@ struct StoreVisitListView: View {
                         .font(.footnote)
                 }
                 .padding(.vertical)
+                .onTapGesture {
+                    onVisitItemSelected(visit.id)
+                }
             }
         }
     }

@@ -26,10 +26,13 @@ struct StoreVisitView: View {
     @State private var visitId: UUID?
     @State private var checkInDisabled = false
     @State private var showingPastVisits = false
+    @ObservedObject var storeVisitViewModel = StoreVisitViewModel()
+    @Binding var selectedTab: Int
+    @State private var selectedVisitId: UUID?
 
     var body: some View {
         NavigationView {
-            Form {
+            VStack {
                 // Store drop-down
                 Section(header: Text("Store")) {
                     HStack {
@@ -114,10 +117,16 @@ struct StoreVisitView: View {
                     
                 }
                 Section(header: Text("Past Visits")) {
-                    StoreVisitListView()
+                    StoreVisitListView(storeVisitViewModel: storeVisitViewModel,
+                                       selectedVisitId: $selectedVisitId,
+                                       onVisitItemSelected: { visitId in
+                                           selectedVisitId = visitId
+                                           selectedTab = 2
+                                       })
+                        .navigationTitle("Store Visits")
+                        .navigationBarTitleDisplayMode(.inline)
                 }
             }.padding()
-            .navigationBarTitle("Store Visit")
         }
     }
 }
